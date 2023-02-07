@@ -2,9 +2,9 @@ import streamlit as st
 
 clients = ["EMS1", "VEL1", "SEN1"]
 tasks = {
-    "Client 1": ["Incoming", "Masking", "RUN", "demasking", "conditionning", Sending"],
-    "Client 2": ["Incoming", "Masking", "RUN", "demasking", "conditionning", Sending"],
-    "Client 3": ["Incoming", "Masking", "RUN", "demasking", "conditionning", Sending"],
+    "Client 1": ["Incoming", "Masking", "RUN", "Demasking", "Conditionning", "Sending"],
+    "Client 2": ["Incoming", "Masking", "RUN", "demasking", "conditionning", "Sending"],
+    "Client 3": ["Incoming", "Masking", "RUN", "demasking", "conditionning", "Sending"],
 }
 progress = {
     "EMS1": [0, 0, 0, 0, 0, 0],
