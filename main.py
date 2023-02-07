@@ -1,28 +1,18 @@
 import streamlit as st
 
-clients = ["EMS1", "VEL1", "SEN1"]
-tasks = {
-    "Client 1": ["Incoming", "Masking", "RUN", "Demasking", "Conditionning", "Sending"],
-    "Client 2": ["Incoming", "Masking", "RUN", "demasking", "conditionning", "Sending"],
-    "Client 3": ["Incoming", "Masking", "RUN", "demasking", "conditionning", "Sending"],
-}
-progress = {
-    "EMS1": [0, 0, 0, 0, 0, 0],
-    "VEL1": [0, 0, 0, 0, 0, 0],
-    "SEN1": [0, 0, 0, 0, 0, 0],
-}
+def main():
+    st.title("Gestion des clients et des tâches")
 
-st.title("Task Management App")
+    clients = ["Client 1", "Client 2", "Client 3"]
+    tasks = ["Tâche 1", "Tâche 2", "Tâche 3", "Tâche 4", "Tâche 5", "Tâche 6", "Tâche 7", "Tâche 8", "Tâche 9"]
 
-selected_client = st.selectbox("Select a client", clients)
-selected_task = st.selectbox("Select a task", tasks[selected_client])
-task_index = tasks[selected_client].index(selected_task)
+    selected_client = st.selectbox("Sélectionnez un client", clients)
+    selected_task = st.selectbox("Sélectionnez une tâche", tasks)
+    task_progress = st.slider("Progression de la tâche", 0, 100)
 
-if st.button("Mark as Complete"):
-    progress[selected_client][task_index] = 100
+    st.write("Client sélectionné: ", selected_client)
+    st.write("Tâche sélectionnée: ", selected_task)
+    st.write("Progression de la tâche: ", task_progress, "%")
 
-st.write("Progress: ", progress[selected_client][task_index], "%")
-
-st.write("Tasks:")
-for i in range(len(tasks[selected_client])):
-    st.write("- ", tasks[selected_client][i], ": ", progress[selected_client][i], "%")
+if __name__ == '__main__':
+    main()
